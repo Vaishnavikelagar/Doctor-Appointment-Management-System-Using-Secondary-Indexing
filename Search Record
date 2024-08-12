@@ -1,0 +1,39 @@
+def search_product(fusn):
+  low=0
+  high=len(i)-1
+  while(low<=high):
+    mid=(low+high)
+    if(fusn==i[mid][0]):
+      return mid
+    elif(fusn>i[mid][0]):
+      low = mid + 1
+    else:
+      high=mid-1
+  return -1
+def sec_search(skey):
+  global s
+  flag=-1
+  globalsindsize
+  for j in range(0,len(s)):
+    if(skey==s[j][0]):
+      print(s[j][1],s[j][0])
+      flag=j
+  return flag
+global res
+defssearch(skey):
+  global res
+  res=[]
+  for j in range(0,len(s)):
+    if(skey==s[j][0]):
+      for p in range(0,len(i)):
+        if(s[j][1]==i[p][0]):
+          pos=i[p][1]
+          print("position",pos)
+          file=open("data.csv")
+          file.seek(pos)
+          line=file.readline()
+          file.close()
+          print(line)
+          res.append(line)
+          break
+      return res
