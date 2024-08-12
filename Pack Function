@@ -1,0 +1,38 @@
+def pack(pid,name,desc,price,mname):
+  buffer.append(pid)
+  buffer.append(name)
+  buffer.append(desc)
+  buffer.append(price)
+  buffer.append(mname)
+def add(pid,r,desc,q,z):
+  global indsize
+  global sindsize
+  global x
+  global i
+  global s
+  x=0
+  if(len(i)!=0):
+    if(search_product(int(pid))>=0):
+      print("id already exist")
+      return False
+  pid=int(pid)
+  d=open("data.csv",'r',newline='')
+  d.seek(0,2)
+  k=int(d.tell())
+  d.close()
+  buffer.clear()
+  pack(pid,r,desc,q,z)
+  temp=(pid,k)
+  i.append(temp)
+  indsize=indsize+1
+  with open("data.csv",'a+',newline='') as out:
+    writer=csv.writer(out,delimiter='|')
+    writer.writerow(buffer)
+  tem=(r,pid)
+  s.append(tem)
+  sindsize=sindsize+1
+  i.sort()
+  s.sort()
+  iwrite()
+  swrite()
+  returnTrue
