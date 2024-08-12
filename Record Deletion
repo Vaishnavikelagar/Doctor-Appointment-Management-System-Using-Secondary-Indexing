@@ -1,0 +1,67 @@
+def delete_record(name,p):
+  global sindsize
+  global indsize
+  p=int(p)
+  if((name,p) in s):
+    message="Element present deleteing and Rewriting the files"
+    for h in range(0,len(i)):
+      if(p==i[h][0]):
+        offset=i[h][1]
+        fread=open("data.csv","r")
+        fread.seek(offset)
+        line=fread.readline()
+        print("Rewriting the file")
+        Newline=line.replace(line[0],"$",1)
+        fread.close()
+        f =open("data.csv","r+")
+        f.seek(offset)
+        f.write(Newline)
+        break
+    s.remove((name,p))
+    i.remove((p,offset))
+    sindsize=sindsize-1
+    indsize=indsize-1
+    iwrite()
+    swrite()
+  else:
+    message="Patient Name and ID do not match"
+  return message
+def unpack():
+  global array
+  ele=0
+  with open("data.csv") as file_name:
+    file_read = csv.reader(file_name)
+    array = list(file_read)
+    arrayOfProducts=[]
+    for k in array:
+      ele=k
+      for j in ele:
+        sub=j.split('|')
+        arrayOfProducts.append(sub)
+    return arrayOfProducts
+def unpack_index():
+  global arr
+  ele=0
+  with open("index.csv") as file_name:
+    file_read = csv.reader(file_name)
+    arr = list(file_read)
+    arrayOfProducts=[]
+    for k in arr:
+      ele=k
+      for j in ele:
+        sub=j.split('|')
+        arrayOfProducts.append(sub)
+    return arrayOfProducts
+def unpack_sindex():
+  global arr
+  ele=0
+  with open("secondary2.csv") as file_name:
+    file_read = csv.reader(file_name)
+    arr = list(file_read)
+    arrayOfProducts=[]
+    for k in arr:
+      else=k
+      for j in ele:
+        sub=j.split('|')
+        arrayOfProducts.append(sub)
+    return arrayOfProducts
